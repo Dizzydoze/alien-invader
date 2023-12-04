@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import bullet from "./images/bullet.png"
 
 const Bullet = ({ x, y: initialY, onBulletHit, index}) => {
     const [y, setY] = useState(initialY);
@@ -32,7 +33,7 @@ const Bullet = ({ x, y: initialY, onBulletHit, index}) => {
             transition={{ duration: 0.3 }}
             className="bullet"
         >
-            Bullet
+            <img src={bullet} style={{width:"5vh",height:"5vh"}}/>
         </motion.div>
     );
 };

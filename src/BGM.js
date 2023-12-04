@@ -4,9 +4,28 @@ import bgmLever1 from './musics/Allegretto.mp3';
 import Button from '@mui/material/Button';
 import { createTheme } from '@mui/material/styles';
 
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
+
+
 const useAudio = url => {
   const [audio] = useState(new Audio(bgmLever1));
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
 
   const toggle = () => setPlaying(!playing);
 
@@ -31,7 +50,7 @@ const BGM = ({ url }) => {
 
   return (
     <div className="bgm">
-      <button onClick={toggle}>{playing ? "Pause" : "BGM"}</button>
+      <Button variant="contained" color="primary" onClick={toggle}>{playing ? "Pause" : "BGM"}</Button>
     </div>
   );
 };

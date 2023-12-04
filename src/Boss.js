@@ -1,19 +1,17 @@
 import "./css/Boss.css";
-import BossImg from './images/Boss.png'
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import ufo from "./images/gif/ufo.gif";
 
-export default function Boss({x}) {
+export default function Boss({ x }) {
+  const bossStyle = {
+    position: "absolute",
+    left: `${x}vh`,
+    mixBlendMode: "screen", // Use 'screen' blend mode to attempt transparency
+  };
 
-    return (
-        <motion.div
-            initial={{x: "50%"}}
-            animate={{x: `${x}vh`}}
-            transition={{duration: 0.5}}
-            className='boss'
-        >
-            <img className='ufo' src={ufo} alt='ufo'/>
-        </motion.div>
-    )
-
+  return (
+    <motion.div className='boss' style={bossStyle}>
+      <img className='ufo' src={ufo} alt='ufo' />
+    </motion.div>
+  );
 }

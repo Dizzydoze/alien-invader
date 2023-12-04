@@ -10,6 +10,10 @@ import "./css/WelcomePage.css";
 import "./css/WelcomePage.css";
 import Xeno from "./images/Xenomorph-back0.jpg";
 import MagicWords from "./MagicWords";
+import alienImg from "./images/slime.png";
+import bomb from "./images/bomb.png";
+import bonus from "./images/bonus.png";
+import destiny from "./images/question_mark.png"
 
 function App() {
   const [userId, setUserId] = useState("");
@@ -41,7 +45,12 @@ function App() {
           </div>
           <div className="sideBar">
             <p>How to play:</p>
-            <p style={{fontSize:"0.8rem"}}>Click Start button to play. You can play until you lose(or die).</p>
+            <p style={{fontSize:"1rem"}}>Click Start button to play. You can play until you lose(or die).</p>
+            <br/>
+            <img src={alienImg} style={{width:"4vh",height:"4vh",float:"left"}}/><p style={{fontSize:"xx-large"}}>:Cute Enemy</p>
+            <img src={bomb} style={{width:"4vh",height:"4vh",float:"left", clear: "left"}}/><p style={{fontSize:"xx-large"}}>:Minus two chances</p>
+            <img src={bonus} style={{width:"4vh",height:"4vh",float:"left", clear: "left"}}/><p style={{fontSize:"xx-large"}}>:Add two chances</p>
+            <img src={destiny} style={{width:"4vh",height:"4vh",float:"left", clear: "left"}}/><p style={{fontSize:"xx-large"}}>:Who knows</p>
           </div>
         </div>
 

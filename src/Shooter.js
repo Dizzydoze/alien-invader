@@ -32,7 +32,8 @@ function Shooter({ score, time }) {
           return [...remainingBullets, newBullet]; // add the new bullet into bullet list
         });
       } else {
-        setBullets((prevBullets) => [...prevBullets, { x }]);
+        const yUpdate = y - 50;
+        setBullets((prevBullets) => [...prevBullets, { x , yUpdate }]);
       }
     }
   }
@@ -53,7 +54,7 @@ function Shooter({ score, time }) {
 
   useEffect(() => {
     setShooterWidth(shooterRef.current.getBoundingClientRect().width);
-    console.log(x);
+
   }, [x]);
 
   return (

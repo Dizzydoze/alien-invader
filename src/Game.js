@@ -161,6 +161,7 @@ export default function Game({answerPhrase, setAnswerPhrase, hiddenPhrase, setHi
       return updatedEnemies;
     });
   }
+  
 
   // Use useEffect to update hiddenPhrase after isGuessed is updated
   useEffect(() => {
@@ -363,14 +364,17 @@ export default function Game({answerPhrase, setAnswerPhrase, hiddenPhrase, setHi
           <DefenseNet y={maxHeight} />
           <div className="down">           
             <Chances leftChance={chancesLeft} />
-            <Bullets />
+            {/* <Bullets /> */}
             <Shooter score={score} time={timeLeft}/>
           </div>
         </>
       )}
-      <div className="newgame-container">
-        <NewGame handleClick={handleClickNewGame} />
-      </div>
+      {
+        gameStarted ? null :
+        <div className="newgame-container">
+          <NewGame handleClick={handleClickNewGame} />
+        </div>
+      }
     </>
   );
 }

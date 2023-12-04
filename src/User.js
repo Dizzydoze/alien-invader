@@ -1,5 +1,24 @@
 import axios from "axios";
 import {useEffect} from "react";
+import Button from '@mui/material/Button';
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+      primary: {
+        light: '#757ce8',
+        main: '#3f50b5',
+        dark: '#002884',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#ff7961',
+        main: '#f44336',
+        dark: '#ba000d',
+        contrastText: '#000',
+      },
+    },
+  });
 
 /**
  * User component
@@ -57,7 +76,7 @@ function User({userId, userName, setUserName}) {
                     My Name:
                     <input type="text" value={userName} onChange={e => setUserName(e.target.value)} />
                 </label>
-                <button className='button' type="submit">Set</button>
+                <Button variant="contained" color="primary" className='button' type="submit">Set</Button>
             </form>
             <h3>[{userId.substring(userId.length - 5, userId.length - 1)}] {userName} is playing</h3>
         </div>
